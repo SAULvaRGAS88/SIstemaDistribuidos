@@ -11,8 +11,9 @@ if __name__ == '__main__':
         menu = math.menu()
         print(menu)
 
-        resp = input()
-   
+        resp = int(input())
+        result = math.pedido(resp)
+        print(result)
     # result = math.validacao(matricula, senha)
     # print('Pedido: {}'.format(result))
 

@@ -18,7 +18,16 @@ class Servidor():
             3-Batata Frita.
             Digite sua escolha: """
     
-
+    def pedido(self, escolha):
+        if escolha == 1:
+            return "Você selecionou a opção 1: Hamburguer"
+        elif escolha == 2:
+            return "Você selecionou a opção 2: Refrigerante"
+        elif escolha == 3:
+            return "Você selecionou a opção 3: Batata frita"
+        else:
+            return "Opção inválida. Por favor, escolha uma opção válida (1, 2 ou 3)"
+    
 # class Cliente():
 #     def __init__(self):
 #         self.matricula = 123

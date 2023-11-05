@@ -3,14 +3,14 @@ import Pyro4 as pyro
 class Menu():
      def cardapio(self, valor):
         if valor == 1:
-            print("Você selecionou a opção 1: Hamburguer")
+            return "Você selecionou a opção 1: Hamburguer"
         elif valor == 2:
-            print("Você selecionou a opção 2: Refrigerante")
+            return "Você selecionou a opção 2: Refrigerante"
         elif valor == 3:
-            print("Você selecionou a opção 3: Batata frita")
+            return "Você selecionou a opção 3: Batata frita"
         else:
-            print("Opção inválida. Por favor, escolha uma opção válida (1, 2 ou 3)")
-        return valor
+            return "Opção inválida. Por favor, escolha uma opção válida (1, 2 ou 3)"
+       
 
 def main():
     server = Menu()

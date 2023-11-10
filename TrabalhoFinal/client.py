@@ -12,8 +12,12 @@ if __name__ == '__main__':
         print(menu)
 
         resp = int(input())
+        verificaSaldo = math.conta(resp)
         result = math.pedido(resp)
         print(result)
+        print(verificaSaldo)
+    else:
+        print("Login incorreto")
+        exit()
     # result = math.validacao(matricula, senha)
     # print('Pedido: {}'.format(result))
-

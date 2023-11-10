@@ -9,13 +9,31 @@ class Servidor():
     def validacao(self, matricula, senha):
         if self.matricula == matricula and self.senha == senha:
             return True
-        
+        return False
+
+    def conta(self, pedido):
+        saldo = 100
+        if pedido == 1:
+            compra = 10
+            if saldo >= compra:
+                resultado = saldo - compra
+                return f"Saldo atual: {resultado}"
+        if pedido == 2:
+            compra = 3
+            if saldo >= compra:
+                resultado = saldo - compra
+                return f"Saldo atual: {resultado}"
+        if pedido == 3:
+            compra = 2
+            if saldo >= compra:
+                resultado = saldo - compra
+                return f"Saldo atual: {resultado}"
 
     def menu(self):
         return """
-            1-Hamburger.
-            2-Refrigerante.
-            3-Batata Frita.
+            1-Hamburger - R$ 10,00.
+            2-Refrigerante - R$ 3,00.
+            3-Batata Frita - R$ 2,00.
             Digite sua escolha: """
     
     def pedido(self, escolha):
@@ -27,37 +45,6 @@ class Servidor():
             return "Você selecionou a opção 3: Batata frita"
         else:
             return "Opção inválida. Por favor, escolha uma opção válida (1, 2 ou 3)"
-    
-# class Cliente():
-#     def __init__(self):
-#         self.matricula = 123
-#         self.senha = 123
-#         self.menu = Menu()
-#         self.menu = {
-#             "1": "Pizza",
-#             "2": "Hambúrguer",
-#             "3": "Sushi"
-#         }
-
-#     def validacao(self, matricula, senha):
-#         if self.matricula == matricula and self.senha == senha:
-#             print("Validação ok!")
-#             return self.menu
-#         return "Senha Errada"
-    
-
-    
-# class Menu():
-#     def cardapio(self):
-    
-#         if escolha == 1:
-#             return "Você selecionou a opção 1: Hamburguer"
-#         elif escolha == 2:
-#             return "Você selecionou a opção 2: Refrigerante"
-#         elif escolha == 3:
-#             return "Você selecionou a opção 3: Batata frita"
-#         else:
-#             return "Opção inválida. Por favor, escolha uma opção válida (1, 2 ou 3)"
        
 
 def main():

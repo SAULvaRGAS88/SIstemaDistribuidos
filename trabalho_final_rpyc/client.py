@@ -1,7 +1,8 @@
 import rpyc
 
+
 if __name__ == '__main__':
-    conn = rpyc.connect('localhost', 4040)  # Altere a porta conforme necessário
+    conn = rpyc.connect('localhost', 4040)
     math = conn.root
 
     print("Digite sua Matrícula e Senha")
@@ -9,14 +10,23 @@ if __name__ == '__main__':
     senha = int(input("Senha: ").strip())
 
     if math.exposed_validacao(matricula, senha):
-        menu = math.exposed_menu()
-        print(menu)
+        saldo_atual = math.exposed_consultar_saldo()
+        print(saldo_atual)
 
-        resp = int(input())
-        verificaSaldo = math.exposed_conta(resp)
-        result = math.exposed_pedido(resp)
-        print(result)
-        print(verificaSaldo)
+        while True:
+            menu = math.exposed_menu()
+            print(menu)
+
+            resp = int(input("Digite o número da opção desejada: "))
+
+            resultados = math.exposed_fazer_pedido(resp)
+
+            for resultado in resultados:
+                print(resultado)
+
+            if resp == 0:
+                break  
+
     else:
         print("Login incorreto")
         exit()

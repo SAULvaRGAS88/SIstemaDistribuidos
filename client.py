@@ -8,14 +8,21 @@ if __name__ == '__main__':
     matricula = int(input("Matrícula: " ).strip())
     senha = int(input("Senha: " ).strip())
     if math.validacao(matricula, senha):
-        menu = math.menu()
-        print(menu)
+        saldo_atual = math.consulta_saldo()
+        print(saldo_atual)
+        
+        while True:
+            menu = math.menu()
+            print(menu)
 
-        resp = int(input())
-        verificaSaldo = math.conta(resp)
-        result = math.pedido(resp)
-        print(result)
-        print(verificaSaldo)
+            resp = int(input())
+            resultados = math.conta(resp)
+            
+            for resultado in resultados:
+                print(resultado)
+            
+            if resp == 0:
+                break
     else:
         print("Login incorreto")
         exit()
